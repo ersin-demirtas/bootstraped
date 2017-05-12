@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amaranth|Lato:100,300,400,700|Montserrat|Pacifico|Quicksand">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+    body {
+        font-family: 'Montserrat', sans-serif !important;
+        background-color: #fff;
+        font-size: 14px !important;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    main {
+        margin-top: 51px;
+        padding-top: 20px;
+    }
+    </style>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="http://www.brand.com">
+                    Brand
+                </a>
+            </div>
+            
+            <form style="padding-left: 15px; background: #dbdbdb; color: #000;" id="search-navbar-collapse" accept-charset="UTF-8" action="/search" class="navbar-form navbar-left collapse navbar-collapse search_address_form" method="get">
+        <i class="fa fa-search"></i>
+	            <div class="input-group">
+	                <input type="search" class="form-control search_address" name="query" id="query" placeholder="Type in username, area or postcode" style="min-width: 350px; background: #dbdbdb; box-shadow: none; border:none" required="" autocomplete="off">
+	            </div>
+	        
+	            <input type="hidden" name="lat" id="lat" value="">
+	            <input type="hidden" name="lng" id="lng" value="">
+
+	        </form>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-heart"></i> Favourites
+                        </a>
+                    </li>
+                    
+                    <li><a href="login.html"><i class="fa fa-lock"></i> Log in</a></li>
+                    <li style="background: #f16666;">
+                        <a style=" color: #fff;" href="signup.html" data-toggle="modal" data-target="#advert-create-form">
+                            <i class="fa fa-plus"></i>
+                            Sign up <sup class="label label-info">Free</sup>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+	
+		
+    <main class="full-height">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h1 class="h2 text-center">
+                    <strong><i class="fa fa-lock"></i> Login</strong>
+                </h1>
+                <p class="text-center text-muted">
+                    Welcome back to Brand
+                </p>
+                <form role="form" method="POST" action="http://www.brand.com/login">
+                <input type="hidden" name="_token" value="8C0dsE3NNTa3lxzyGztgbIT3iHcO7exrAoysJ5qc">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email address</label>
+                                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email address" required>
+                                                            </div>
+                            <div class="">
+                                <label for="password" class="control-label">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                                                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-block btn-success">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <center>
+                    <a href="forgot-password.html">Forgot password?</a> <span class="text-muted">/</span> <a href="signup.html">Create account.</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <!-- JavaScripts -->
+    <script src="/js/maplace.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+    // Copyright 2014-2015 Twitter, Inc.
+	// Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	  var msViewportStyle = document.createElement('style')
+	  msViewportStyle.appendChild(
+	    document.createTextNode(
+	      '@-ms-viewport{width:auto!important}'
+	    )
+	  )
+	  document.querySelector('head').appendChild(msViewportStyle)
+	}
+	
+	$(function () {
+	  var nua = navigator.userAgent
+	  var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+	  if (isAndroid) {
+	    $('select.form-control').removeClass('form-control').css('width', '100%')
+	  }
+	})
+    </script>
+</body>
+</html>
+
